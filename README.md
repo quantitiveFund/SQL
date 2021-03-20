@@ -59,24 +59,25 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
-   * `insert into hero_1(hero_id,hero_name,profession) VALUES` 
-    `(1,'李白','刺客'),  
-    (2,'鲁班七号','射手'),  
-    (3,'吕布','战士'),  
-    (4,'安琪拉','法师'),  
-    (5,'马超','战士'),  
-    (6,'马可波罗','射手'),  
-    (7,'露娜','刺客'),  
-    (8,'诸葛亮','法师 ),  
-    (9,'司马懿','法师'),  
-    (10,'澜','刺客');`  
+   * `insert into hero_1(hero_id,hero_name,profession) VALUES`   
+    `(1,'李白','刺客'),`       
+    `(2,'鲁班七号','射手'),`   
+    `(3,'吕布','战士'),`   
+    `(4,'安琪拉','法师'),`   
+    `(5,'马超','战士'),`
+    `(6,'马可波罗','射手'),`  
+    `(7,'露娜','刺客'),`  
+    `(8,'诸葛亮','法师 ),`  
+    `(9,'司马懿','法师'),`  
+    `(10,'澜','刺客');`    
 
-![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
+    ![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
 
 * 更新数据  
  `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`   
   * `update hero_1 SET profession = '法师' where hero_name = '露娜';`
-  ![image](https://user-images.githubusercontent.com/73262817/111872942-ed24ab80-89c8-11eb-8899-a496009edf56.png)
+ 
+ ![image](https://user-images.githubusercontent.com/73262817/111872942-ed24ab80-89c8-11eb-8899-a496009edf56.png)
   * tips  
   1.利用where语句可以同时更新多条记录  
   2.SET之后的赋值语句可以在原来的基础上改动    
@@ -84,10 +85,12 @@
 * 删除数据  
 `DELETE FROM 表名 WHERE 字段 = 值;`  
   * `delete from hero_1 where hero_name = '露娜';  
-  ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
+ 
+ ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
 
 
 ## 数据查询语言 ##
+
 以下图的hero_1表格为例
 
 ![image](https://user-images.githubusercontent.com/73262817/111873673-683b9100-89cc-11eb-94d4-bd11b3a5c602.png)
@@ -95,7 +98,8 @@
 * 全部查询  
 `SELECT * FROM 表名;`
   * `SELECT * FROM hero_1;`  
-![image](https://user-images.githubusercontent.com/73262817/111873677-6bcf1800-89cc-11eb-9434-104d0f8dc2ee.png)
+
+    ![image](https://user-images.githubusercontent.com/73262817/111873677-6bcf1800-89cc-11eb-9434-104d0f8dc2ee.png)
 
 
 * 条件查询  
@@ -103,7 +107,8 @@
 用来查找列1值大于等于n且列2值小于等于m的记录  
 逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
   * `SELECT * FROM hero_1 WHERe profession = '法师';`  
-  ![image](https://user-images.githubusercontent.com/73262817/111873723-b6e92b00-89cc-11eb-8d57-b233c4e868d5.png)
+ 
+    ![image](https://user-images.githubusercontent.com/73262817/111873723-b6e92b00-89cc-11eb-8d57-b233c4e868d5.png)
 
 
 * 投影查询  
@@ -111,7 +116,7 @@
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着） 
   * `SELECT hero_id id_hero, hero_name name_hero FROM hero_1;;`   
 
-![image](https://user-images.githubusercontent.com/73262817/111873785-10e9f080-89cd-11eb-84ae-a2f0823ed036.png)
+    ![image](https://user-images.githubusercontent.com/73262817/111873785-10e9f080-89cd-11eb-84ae-a2f0823ed036.png)
 
 
 * 排序  
@@ -120,7 +125,7 @@
 加上DESC表示倒序
   * `select * from hero_1 order by ban_rate desc;`  
  
- ![image](https://user-images.githubusercontent.com/73262817/111873841-48f13380-89cd-11eb-92d6-f468d9133e42.png)
+    ![image](https://user-images.githubusercontent.com/73262817/111873841-48f13380-89cd-11eb-92d6-f468d9133e42.png)
 
 
 * 聚合查询  
@@ -129,7 +134,7 @@
 `SELECT COUNT(*) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
   * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
-  ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
+    ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
 
   * 其他查询法   
     `SUM` 计算列合计值，该列必须为数值类型  
