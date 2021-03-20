@@ -7,28 +7,56 @@
 验证MySQL是否安装正确，可以通过在命令提示符（在主界面运行cmd）中输入`mysql -u root -p`，正确安装下会链接到MySQL服务器，同时提示`mysql>`
 
 ## 定义数据对象语句 ##
-### CREATE ###
+### 创建 ###
 * 创建数据库  
 `CREATE DATABASE 数据库名;`
   *  `CREATE DATABSE 王者荣耀;`  
    
    ![1](https://user-images.githubusercontent.com/73262817/111869273-8946b680-89b9-11eb-960d-bb23bf6188d5.PNG)
  
- * 创建列表
+ * 创建列表  
   `CREATE TABLE 列表名(字段1，字段2...);`  
-    * `CREATE TABLE hero_1( 
-hero_id INT,
-hero_name VARCHAR(20),
-profession VARCHAR(20)
-);`  
+   * `CREATE TABLE hero_1( 
+     hero_id INT,
+     hero_name VARCHAR(20),
+     profession VARCHAR(20)
+     );`  
+     * int 整数  
+     * double 双精度
+     * varchar 字符串  
+     * data 时间  
 
 ![捕获123](https://user-images.githubusercontent.com/73262817/111870245-84383600-89be-11eb-9a52-fb414f7d2c75.PNG)
 
-    
+### 数据库和列表的删除 ###
+ * 删除表  
+  `DROP TABLE IF EXISXS 表名;`  
+  如果表名存在就删除，也可以不加if exist  
+  
+ * 删除数据库  
+  `DROP DATABASE 库名;`  
+  
+### 修改列表结构 ###
+* 添加列名  
+ `ALTER TABLE 表名 ADD 列名 类型;`  
+ `alter table hero_1 add position VARCHAR(20);`  
+
+![image](https://user-images.githubusercontent.com/73262817/111870597-9dda7d00-89c0-11eb-9741-e47dbb1f8ad6.png)
+
+* 修改列类型  
+`ALTERT TABLE 表名 MODIFY 列名 类型;'  
+
+* 删除列 
+`ALTER TABLE 表名 DROP 列名;`  
+
+* 修改表名  
+`REANME TABLE 表名 TO 新表名;'  
+
+
+## 数据操作语言 ##
 
 
 
-## 基本查询 ##
 * 全部查询  
 `SELECT * FROM 表名;`
 *表示所有列  
