@@ -48,7 +48,7 @@
 
 * 删除列  
 `ALTER TABLE 表名 DROP 列名;`  
- * `alter table hero_1 drop position;`  
+  * `alter table hero_1 drop position;`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111870907-463d1100-89c2-11eb-8fdb-a1ad0c7f2fa5.png)
 
@@ -59,8 +59,8 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
- * `insert into hero_1(hero_id,hero_name,profession) VALUES  
-    (1,'李白','刺客'),  
+   * `insert into hero_1(hero_id,hero_name,profession) VALUES` 
+    `(1,'李白','刺客'),  
     (2,'鲁班七号','射手'),  
     (3,'吕布','战士'),  
     (4,'安琪拉','法师'),  
@@ -75,7 +75,15 @@
 
 * 更新数据  
  `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`   
- 
+  * `update hero_1 SET profession = '法师' where hero_name = '露娜';`
+  ![image](https://user-images.githubusercontent.com/73262817/111872942-ed24ab80-89c8-11eb-8899-a496009edf56.png)
+  * tips  
+  1.利用where语句可以同时更新多条记录  
+  2.SET之后的赋值语句可以在原来的基础上改动    
+
+* 删除数据  
+`DELETE FROM 表名 WHERE 字段
+  
 
 
 
@@ -123,15 +131,6 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
 结果为一个二维表，行是表1表2行数的乘积，列是表1表2列并列。   
 
 ## 修改数据 ##
-
-
-* UPDATE
-
-更新字段1为值1..，条件为WHERE之后的语句（例如ID = 1）    
-  * tips  
-  1.利用where语句可以同时更新多条记录  
-  2.SET之后的赋值语句可以在原来的基础上改动    
-  例如`UPDATE students SET score=score+10 WHERE score<80;`  
 
 * DELETE  
 `DELETE FROM <表名> WHERE ...;`
