@@ -39,7 +39,7 @@
 ### 修改列表结构 ###
 * 添加列名  
  `ALTER TABLE 表名 ADD 列名 类型;`  
- `alter table hero_1 add position VARCHAR(20);`  
+  * `alter table hero_1 add position VARCHAR(20);`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111870597-9dda7d00-89c0-11eb-9741-e47dbb1f8ad6.png)
 
@@ -48,7 +48,7 @@
 
 * 删除列  
 `ALTER TABLE 表名 DROP 列名;`  
-`alter table hero_1 drop position;`  
+ * `alter table hero_1 drop position;`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111870907-463d1100-89c2-11eb-8fdb-a1ad0c7f2fa5.png)
 
@@ -59,21 +59,23 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
-`insert into hero_1(hero_id,hero_name,profession) VALUES  
-(1,'李白','刺客'),  
-(2,'鲁班七号','射手'),  
-(3,'吕布','战士'),  
-(4,'安琪拉','法师'),  
-(5,'马超','战士'),  
-(6,'马可波罗','射手'),  
-(7,'露娜','刺客'),  
-(8,'诸葛亮','法师 ),  
-(9,'司马懿','法师'),  
-(10,'澜','刺客');   
+ * `insert into hero_1(hero_id,hero_name,profession) VALUES  
+    (1,'李白','刺客'),  
+    (2,'鲁班七号','射手'),  
+    (3,'吕布','战士'),  
+    (4,'安琪拉','法师'),  
+    (5,'马超','战士'),  
+    (6,'马可波罗','射手'),  
+    (7,'露娜','刺客'),  
+    (8,'诸葛亮','法师 ),  
+    (9,'司马懿','法师'),  
+    (10,'澜','刺客');`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
 
-* 
+* 更新数据  
+ `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`   
+ 
 
 
 
@@ -124,7 +126,7 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
 
 
 * UPDATE
-`UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`
+
 更新字段1为值1..，条件为WHERE之后的语句（例如ID = 1）    
   * tips  
   1.利用where语句可以同时更新多条记录  
