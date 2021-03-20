@@ -26,7 +26,7 @@
      * varchar 字符串  
      * data 时间  
 
-![捕获123](https://user-images.githubusercontent.com/73262817/111870245-84383600-89be-11eb-9a52-fb414f7d2c75.PNG)
+   ![捕获123](https://user-images.githubusercontent.com/73262817/111870245-84383600-89be-11eb-9a52-fb414f7d2c75.PNG)
 
 ### 数据库和列表的删除 ###
  * 删除表  
