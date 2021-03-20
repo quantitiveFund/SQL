@@ -11,6 +11,7 @@
 * 创建数据库  
 `CREATE DATABASE 数据库名;`
   *  `CREATE DATABSE 王者荣耀;`  
+   
    ![1](https://user-images.githubusercontent.com/73262817/111869273-8946b680-89b9-11eb-960d-bb23bf6188d5.PNG)
  
  * 创建列表
@@ -20,6 +21,7 @@ hero_id INT,
 hero_name VARCHAR(20),
 profession VARCHAR(20)
 );`  
+
 ![捕获123](https://user-images.githubusercontent.com/73262817/111870245-84383600-89be-11eb-9a52-fb414f7d2c75.PNG)
 
     
