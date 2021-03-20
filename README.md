@@ -43,23 +43,43 @@
 
 ![image](https://user-images.githubusercontent.com/73262817/111870597-9dda7d00-89c0-11eb-9741-e47dbb1f8ad6.png)
 
-* 修改列类型  
-`ALTERT TABLE 表名 MODIFY 列名 类型;'  
+* 修改列类型    
+`ALTERT TABLE 表名 MODIFY 列名 类型;`  
 
-* 删除列 
+* 删除列  
 `ALTER TABLE 表名 DROP 列名;`  
+`alter table hero_1 drop position;`  
 
-* 修改表名  
-`REANME TABLE 表名 TO 新表名;'  
+![image](https://user-images.githubusercontent.com/73262817/111870907-463d1100-89c2-11eb-8fdb-a1ad0c7f2fa5.png)
+
+* 修改表名   
+`REANME TABLE 表名 TO 新表名;`  
 
 
 ## 数据操作语言 ##
+* 插入段名  
+`INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
+`insert into hero_1(hero_id,hero_name,profession) VALUES  
+(1,'李白','刺客'),  
+(2,'鲁班七号','射手'),  
+(3,'吕布','战士'),  
+(4,'安琪拉','法师'),  
+(5,'马超','战士'),  
+(6,'马可波罗','射手'),  
+(7,'露娜','刺客'),  
+(8,'诸葛亮','法师 ),  
+(9,'司马懿','法师'),  
+(10,'澜','刺客');   
+
+![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
+
+* 
 
 
 
 * 全部查询  
 `SELECT * FROM 表名;`
-*表示所有列  
+
 
 * 条件查询  
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
@@ -101,11 +121,7 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
 结果为一个二维表，行是表1表2行数的乘积，列是表1表2列并列。   
 
 ## 修改数据 ##
-* INSERT  
-`INSERT INTO <表名> (字段1, 字段2, ...) VALUES   
-(值1, 值2, ...),  
-(值1,值2,...);`
-在表中插入新记录，值123分别对应字段123的位置，一次可以添加多个。。
+
 
 * UPDATE
 `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`
