@@ -34,7 +34,7 @@
     `ADD CONSTRAIN uni_name UNIQUE (name）;`
 
 ## 基本查询 ##
-* 查询表中数据库表的数据
+* 查询表中数据库表的数据  
 `SELECT * FROM <表名>;`
 
 
