@@ -64,10 +64,10 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
 `SELECT COUNT(*) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
   * 其他查询法   
-    SUM 计算列合计值，该列必须为数值类型  
-    AVG 计算列平均值，同样要求数值类型   
-    MAX 计算列最大值    
-    MIN 计算列最小值    
+    `SUM` 计算列合计值，该列必须为数值类型  
+    `AVG` 计算列平均值，同样要求数值类型   
+    `MAX` 计算列最大值    
+    `MIN` 计算列最小值    
 
   * 分组聚合    
     `SELECT 列名1，COUNT（*） num FROM 表名 GROUP BY 列名1;`  
@@ -113,24 +113,24 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
    `EXIT`
    
 ## SQL实用语句 ##
-* 插入或替换
+* 插入或替换  
 `REPLACE INTO students (字段1，字段2...) VALUES (值1，值2,...);`  
 如果原记录存在，就会删除原记录替换为新记录
-* 插入或更新
+* 插入或更新  
 `INSERT INTO students (字段1，字段2...) VALUES (值1，值2,...) ON DULICATE KEY UPDATE 字段名1 = 值1，字段名2 = 值2...;`  
 若记录不存在，则插入新记录，否则，字段1为值1的记录会被update之后的内容更新  
 
-* 插入或忽略
+* 插入或忽略  
 `INSERT IGNORE INTO students (字段1，字段2...) VALUES (值1，值2,...);`  
 若记录存在，则忽略，什么也不会发生
 * 快照  
 `CREATE TABLE 新表名 SELECT * FROM 原表名 WHERE 字段1 = 1;`   
 用于复制当前表的部分或全部数据到新表
 
-* 强制使用锁定指引
+* 强制使用锁定指引  
 `SELECT * FROM 表名 FORCE INDEX （字段名）;`  
 强制系统使用（字段名）进行索引，前提是索引必须存在
 
 # 参考资料 #
-
+[1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.
 
