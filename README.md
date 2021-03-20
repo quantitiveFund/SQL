@@ -10,4 +10,4 @@
 
 ## 运行MySQL ##
 
-验证MySQL是否安装正确，可以通过在命令提示符（在主界面运行cmd）中输入'mysql -u root -p'，正确安装下会链接到MySQL服务器，同时提示'mysql>'
+验证MySQL是否安装正确，可以通过在命令提示符（在主界面运行cmd）中输入`mysql -u root -p`，正确安装下会链接到MySQL服务器，同时提示`mysql>`
