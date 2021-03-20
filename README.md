@@ -82,75 +82,61 @@
   2.SET之后的赋值语句可以在原来的基础上改动    
 
 * 删除数据  
-`DELETE FROM 表名 WHERE 字段
-  
+`DELETE FROM 表名 WHERE 字段 = 值;`  
+  * `delete from hero_1 where hero_name = '露娜';  
+  ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
 
 
+## 数据查询语言 ##
+以下图的hero_1表格为例
+
+![image](https://user-images.githubusercontent.com/73262817/111873673-683b9100-89cc-11eb-94d4-bd11b3a5c602.png)
 
 * 全部查询  
 `SELECT * FROM 表名;`
+  * `SELECT * FROM hero_1;`  
+![image](https://user-images.githubusercontent.com/73262817/111873677-6bcf1800-89cc-11eb-9434-104d0f8dc2ee.png)
 
 
 * 条件查询  
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
 用来查找列1值大于等于n且列2值小于等于m的记录  
-逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or
+逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
+  * `SELECT * FROM hero_1 WHERe profession = '法师';`  
+  ![image](https://user-images.githubusercontent.com/73262817/111873723-b6e92b00-89cc-11eb-8d57-b233c4e868d5.png)
+
 
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着） 
+  * `SELECT hero_id id_hero, hero_name name_hero FROM hero_1;;`   
+
+![image](https://user-images.githubusercontent.com/73262817/111873785-10e9f080-89cd-11eb-84ae-a2f0823ed036.png)
+
 
 * 排序  
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
 加上DESC表示倒序
+  * `select * from hero_1 order by ban_rate desc;`  
+ 
+ ![image](https://user-images.githubusercontent.com/73262817/111873841-48f13380-89cd-11eb-92d6-f468d9133e42.png)
 
-* 分页查询  
-`LIMIT M OFFSET N;`  
-用于数据量大，想分页显示的时候  
-M表示每次显示最大的条数，N表示从第（N+1）条开始  
-（例如 `LIMIT 3 OFFSET 0；`表示从第1条数据开始显示，最多显示3条）
 
 * 聚合查询  
 `SELECT COUNT(*) FROM 表名；`  
 查询表的全部行数  
 `SELECT COUNT(*) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
+  * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
+  ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
+
   * 其他查询法   
     `SUM` 计算列合计值，该列必须为数值类型  
     `AVG` 计算列平均值，同样要求数值类型   
     `MAX` 计算列最大值    
     `MIN` 计算列最小值    
 
-  * 分组聚合    
-    `SELECT 列名1，COUNT（*） num FROM 表名 GROUP BY 列名1;`  
-    把列名1中值相同的项数量加总，显示为num
-
-* 多表查询    
-`SELECT * FROM 表名1，表名2;`  
-结果为一个二维表，行是表1表2行数的乘积，列是表1表2列并列。   
-
-## 修改数据 ##
-
-* DELETE  
-`DELETE FROM <表名> WHERE ...;`
-从表中删除WHERE之后的判断内容
-
-## MySQL语句 ##
-* 列出所有表  
-`SHOW TABLES;`
-
-* 查看表的结构命令  
-`DESC 表名；`
-
-* 创建表  
-  `CREATE TABLE 表名;`
-* 删除表  
-  `DROP TABLE 表名;`
-* 删除列  
-  `ALTER TABLE 表名 DROP CULUMN 列名;`
-* 退出  
-   `EXIT`
    
 ## SQL实用语句 ##
 * 插入或替换  
