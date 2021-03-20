@@ -88,11 +88,11 @@ M表示每次显示最大的条数，N表示从第（N+1）条开始
 `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`
 更新字段1为值1..，条件为WHERE之后的语句（例如ID = 1）    
   * tips  
-  利用where语句可以同时更新多条记录  
-  SET之后的赋值语句可以在原来的基础上改动    
+  1.利用where语句可以同时更新多条记录  
+  2.SET之后的赋值语句可以在原来的基础上改动    
   例如`UPDATE students SET score=score+10 WHERE score<80;`  
 
-* DELETE
+* DELETE  
 `DELETE FROM <表名> WHERE ...;`
 从表中删除WHERE之后的判断内容
 
