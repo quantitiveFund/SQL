@@ -1,5 +1,7 @@
 # SQL
 
+![image](https://user-images.githubusercontent.com/73262817/111874398-0da43400-89d0-11eb-8382-8d95b8453b8c.png)
+
 结构化查询语言(Structured Query language)，是一种用与数据库查询、存储、更新、管理的编程语言。
 
 ## 运行MySQL ##
