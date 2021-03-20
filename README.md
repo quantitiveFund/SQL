@@ -7,7 +7,7 @@
 验证MySQL是否安装正确，可以通过在命令提示符（在主界面运行cmd）中输入`mysql -u root -p`，正确安装下会链接到MySQL服务器，同时提示`mysql>`
 
 ## 定义数据对象语句 ##
-### 创建 ###
+### 数据库和列表的创建 ###
 * 创建数据库  
 `CREATE DATABASE 数据库名;`
   *  `CREATE DATABSE 王者荣耀;`  
