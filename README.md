@@ -180,7 +180,27 @@
    ,port= 3306
    ,db='test'
    ,charset='utf8')
+   cur = conn.cursor() # 生成游标对象
    ```
+* 插入
+ `sql= "INSERT INTO 表名 VALUES (值1，值2，值3)`
 
+*  查询
+  `sql= "SELECT * FROM 表名 WHERE <判断语句>`
+
+* 删除
+`sql = "DELETE FROM 表名 WHERE <判断语句>`
+
+* 改
+`sql = UPDATE 表名 SET 字段1 = 值1`
+
+* 执行
+```try:   
+     cur.execute(sql)   # 执行插入的sql语句    
+     conn.commit()    # 提交到数据库执行
+   except:    
+     coon.rollback()# 如果发生错误则回滚 
+     conn.close()    # 关闭数据库连接
+```
 # 参考资料 #
 [1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.
