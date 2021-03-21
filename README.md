@@ -164,5 +164,23 @@
 `SELECT * FROM 表名 FORCE INDEX （字段名）;`  
 强制系统使用（字段名）进行索引，前提是索引必须存在
 
+## python与SQL ##
+### PyMySQL ###
+调出cmd面板 `WIN键 + R, 输入cmd 回车'`  
+* 安装  
+  `pip install PyMySQL`
+  
+  ![image](https://user-images.githubusercontent.com/73262817/111891856-0e20e700-8a31-11eb-8ce8-84e8b5c30d9c.png)
+
+* 利用PyMySQL连接数据库
+```import pymysql
+   conn=pymysql.connect(host = '127.0.0.1',
+   ,user = 'root' 
+   ,passwd='password'
+   ,port= 3306
+   ,db='test'
+   ,charset='utf8')
+   ```
+
 # 参考资料 #
 [1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.
