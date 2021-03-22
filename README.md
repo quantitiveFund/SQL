@@ -61,17 +61,20 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
-   * `insert into hero_1(hero_id,hero_name,profession) VALUES`   
-    `(1,'李白','刺客'),`       
-    `(2,'鲁班七号','射手'),`   
-    `(3,'吕布','战士'),`   
-    `(4,'安琪拉','法师'),`   
-    `(5,'马超','战士'),`
-    `(6,'马可波罗','射手'),`  
-    `(7,'露娜','刺客'),`  
-    `(8,'诸葛亮','法师 ),`  
-    `(9,'司马懿','法师'),`  
-    `(10,'澜','刺客');`    
+   * 
+   ```
+   insert into hero_1(hero_id,hero_name,profession) VALUES
+    (1,'李白','刺客'),   
+    (2,'鲁班七号','射手'),
+    (3,'吕布','战士'),
+    (4,'安琪拉','法师'),   
+    (5,'马超','战士'),
+    (6,'马可波罗','射手'),  
+    (7,'露娜','刺客'),  
+    (8,'诸葛亮','法师 ),  
+    (9,'司马懿','法师'),  
+    (10,'澜','刺客');
+    ```
 
     ![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
 
@@ -91,7 +94,7 @@
  ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
 
 
-## 数据查询语言 ##
+## 数据查询语言SELECT ##
 
 以下图的hero_1表格为例
 
@@ -115,7 +118,7 @@
 
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
-返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着） 
+返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
   * `SELECT hero_id id_hero, hero_name name_hero FROM hero_1;;`   
 
     ![image](https://user-images.githubusercontent.com/73262817/111873785-10e9f080-89cd-11eb-84ae-a2f0823ed036.png)
