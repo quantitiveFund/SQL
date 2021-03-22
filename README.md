@@ -117,7 +117,12 @@
 
 * 去除值重复
   ` SELECT DISTINCT 列名 FROM 表名;`
-  例子记得添加
+  
+  * ` SELECT DISTINCT profession from hero_1;`  
+  查询数据库中所有存在的职业
+  
+  ![image](https://user-images.githubusercontent.com/73262817/111998116-ab297000-8b56-11eb-927b-7a5f422f9b91.png)
+
 
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
@@ -147,7 +152,12 @@
   * group by
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`
   group by可以把聚合查询的结果进一步切分
-  记得加个例子
+  
+  `SELECT profession,AVG(ban_rate)  FROM hero_1 GROUP BY profession;`
+  查询每个职业平均被禁百分比
+  
+  ![image](https://user-images.githubusercontent.com/73262817/111997759-51c14100-8b56-11eb-9aed-e01b73feedbc.png)
+
   
   * 其他查询法   
     `SUM` 计算列合计值，该列必须为数值类型  
