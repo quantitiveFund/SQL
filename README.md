@@ -61,7 +61,7 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
-   * 
+   *  
    ```
    insert into hero_1(hero_id,hero_name,profession) VALUES
     (1,'李白','刺客'),   
