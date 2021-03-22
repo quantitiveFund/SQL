@@ -149,17 +149,16 @@
   * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
     ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
 
-  * group by
-  `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`
-  group by可以把聚合查询的结果进一步切分
+  * group by  
+  `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
+  group by可以把聚合查询的结果进一步切分  
   
-  `SELECT profession,AVG(ban_rate)  FROM hero_1 GROUP BY profession;`
-  查询每个职业平均被禁百分比
+    * `SELECT profession,AVG(ban_rate)  FROM hero_1 GROUP BY profession;`    
+      查询每个职业平均被禁百分比   
   
   ![image](https://user-images.githubusercontent.com/73262817/111997759-51c14100-8b56-11eb-9aed-e01b73feedbc.png)
-
-  
-  * 其他查询法   
+ 
+  * 其他查询法    
     `SUM` 计算列合计值，该列必须为数值类型  
     `AVG` 计算列平均值，同样要求数值类型   
     `MAX` 计算列最大值    
