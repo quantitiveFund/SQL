@@ -115,6 +115,9 @@
  
     ![image](https://user-images.githubusercontent.com/73262817/111873723-b6e92b00-89cc-11eb-8d57-b233c4e868d5.png)
 
+* 去除值重复
+  ` SELECT DISTINCT 列名 FROM 表名;`
+  例子记得添加
 
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
@@ -141,6 +144,11 @@
   * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
     ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
 
+  * group by
+  `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`
+  group by可以把聚合查询的结果进一步切分
+  记得加个例子
+  
   * 其他查询法   
     `SUM` 计算列合计值，该列必须为数值类型  
     `AVG` 计算列平均值，同样要求数值类型   
@@ -208,3 +216,4 @@ except:
 ```
 # 参考资料 #
 [1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.
+[2][日]MICK.SQL基础教程[M].人民邮电出版社:北京,2013:1-102.
