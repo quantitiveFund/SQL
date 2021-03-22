@@ -215,5 +215,5 @@ except:
    conn.close()    # 关闭数据库连接
 ```
 # 参考资料 #
-[1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.
+[1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.  
 [2][日]MICK.SQL基础教程[M].人民邮电出版社:北京,2013:1-102.
