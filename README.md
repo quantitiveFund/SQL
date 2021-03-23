@@ -200,29 +200,42 @@
    ,port= 3306
    ,db='test'
    ,charset='utf8')
-   cur = conn.cursor() # 生成游标对象
+   cur = conn.cursor()  #生成游标对象  
+   cur.close() # 关闭游标  
+   conn.close() # 关闭连接  
    ```
-* 插入  
+ * 插入  
  `sql= "INSERT INTO 表名 VALUES (值1，值2，值3)`
 
-*  查询  
+ *  查询  
   `sql= "SELECT * FROM 表名 WHERE <判断语句>`
 
-* 删除  
+ * 删除  
 `sql = "DELETE FROM 表名 WHERE <判断语句>`
 
-* 改  
+ * 改  
 `sql = UPDATE 表名 SET 字段1 = 值1`
 
-* 执行  
-```
-try:   
+ * 执行  
+```   
    cur.execute(sql)   # 执行插入的sql语句    
-   conn.commit()    # 提交到数据库执行
-except:    
-   coon.rollback()# 如果发生错误则回滚 
-   conn.close()    # 关闭数据库连接
+   data = cur.fetchfall() # 通过fetchfall方法获取数据
 ```
+   data是一个可迭代对象。
+
+### mysql.connector
+```
+import mysql.connector
+conn=mysql.connector.connect(host = '127.0.0.1' # 连接名称，默认127.0.0.1 
+,user = 'root' 
+,passwd='password' 
+,port= 3306 
+,db='test' 
+,charset='utf8' 
+)
+```
+与PyMySQL相比较而言，最大的区别在于连接数据库时的语法不同，其余部分大同小异。
+
 # 参考资料 #
 [1]廖雪峰.廖雪峰SQL教程[EB/OL].https://www.liaoxuefeng.com/wiki/1177760294764384,2021-3-20.  
 [2][日]MICK.SQL基础教程[M].人民邮电出版社:北京,2013:1-102.
