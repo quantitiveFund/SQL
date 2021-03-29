@@ -164,7 +164,19 @@
     `MAX` 计算列最大值    
     `MIN` 计算列最小值    
 
-   
+
+## CASE表达式
+一般语法
+```
+CASE WHEN <判断表达式> THEN <表达式>
+     WHEN <判断表达式> THEN <表达式>
+     WHEN <判断表达式> THEN <表达式>
+     .
+     .
+     ELSE <表达式>
+END
+```
+
 ## SQL实用语句 ##
 * 插入或替换  
 `REPLACE INTO students (字段1，字段2...) VALUES (值1，值2,...);`  
