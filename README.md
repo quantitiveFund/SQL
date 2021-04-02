@@ -189,12 +189,16 @@
 ## SQL高级处理 
 ### 窗口函数
 也称为OLAP函数（Online analytical processing），可以对数据库进行实时处理。  
-语法  
+* 语法   
 ```
 <窗口函数> OVER ([partition by <列清单>])
 ORDER BY <排序列清单>;
 ```
-
+* 用法  
+  * 作为窗口函数用的聚合函数（SUM,AVG,COUNT,MAX,MIN）
+  * RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数
+  
+（加个例子）
 
 ## python与SQL 
 ### PyMySQL 
