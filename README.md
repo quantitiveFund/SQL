@@ -185,8 +185,19 @@
 `SELECT * FROM 表名 FORCE INDEX （字段名）;`  
 强制系统使用（字段名）进行索引，前提是索引必须存在
 
-## python与SQL ##
-### PyMySQL ###
+
+## SQL高级处理 
+### 窗口函数
+也称为OLAP函数（Online analytical processing），可以对数据库进行实时处理。  
+语法  
+```
+<窗口函数> OVER ([partition by <列清单>])
+ORDER BY <排序列清单>;
+```
+
+
+## python与SQL 
+### PyMySQL 
 调出cmd面板 `WIN键 + R, 输入cmd 回车'`  
 * 安装  
   `pip install PyMySQL`
