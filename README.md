@@ -110,6 +110,7 @@
 * 条件查询  
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
 用来查找列1值大于等于n且列2值小于等于m的记录  
+注意where要直接接在from后面  
 逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
   * `SELECT * FROM hero_1 WHERe profession = '法师';`  
  
@@ -144,7 +145,7 @@
 * 聚合查询  
 `SELECT COUNT(*) FROM 表名；`  
 查询表的全部行数  
-`SELECT COUNT(*) 别名 FROM 表名 WHERE 列名1 >= n ;`  
+`SELECT COUNT(列名1) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
   * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
     ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
