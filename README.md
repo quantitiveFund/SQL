@@ -145,11 +145,10 @@
    group by可以把聚合查询的结果进一步切分  
   
     * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`  
-    * ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
+    * 查询每年投票数大于10000的全部电影的平均分数   
+    
+    ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
        
-   查询每年投票数大于10000的全部电影的平均分数   
-  
-  ![image](https://user-images.githubusercontent.com/73262817/113722273-d7cab380-9722-11eb-93c2-9ea9b83e17a2.png)
   * HAVING  
   由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
   语法  
