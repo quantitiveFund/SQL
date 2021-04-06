@@ -140,9 +140,9 @@
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
 加上DESC表示倒序
-  * `select * from movie_data order by Rating desc;`  
+  * `select * from movie_data ORDER BY Rating desc;`  
  
-    ![image](https://user-images.githubusercontent.com/73262817/113715702-65ef6b80-971c-11eb-949e-bddb5580f29c.png)
+   ![image](https://user-images.githubusercontent.com/73262817/113720338-1cede600-9721-11eb-9a66-a3aec0cf71b9.png)
 
 
 * 聚合查询  
@@ -150,18 +150,33 @@
 查询表的全部行数  
 `SELECT COUNT(列名1) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
-  * `select count(*) total_heronumber from hero_1 where ban_rate > 0.5;`  
-    ![image](https://user-images.githubusercontent.com/73262817/111873901-a1c0cc00-89cd-11eb-9674-fcb324925941.png)
+  * `select count(*) total from movie_data where Rating > 8;`  
+   ![image](https://user-images.githubusercontent.com/73262817/113720555-5cb4cd80-9721-11eb-87e4-379a5405d707.png)
+
 
   * group by  
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
   group by可以把聚合查询的结果进一步切分  
   
-    * `SELECT profession,AVG(ban_rate)  FROM hero_1 GROUP BY profession;`    
-      查询每个职业平均被禁百分比   
+    * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`  
+    * ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
+       
+      查询每年投票数大于10000的全部电影的平均分数   
   
-  ![image](https://user-images.githubusercontent.com/73262817/111997759-51c14100-8b56-11eb-9aed-e01b73feedbc.png)
- 
+  ![image](https://user-images.githubusercontent.com/73262817/113722273-d7cab380-9722-11eb-93c2-9ea9b83e17a2.png)
+
+  *  having  
+  由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
+  语法  
+  ```
+  SELECT <列名1>,<列名2><列名3>...  
+    FROM <表名>  
+    GROUP BY <列名1>,<列名2><列名3>...   
+  HAVING <分组结果对应条件>；  
+    * `SELECT `Year` , AVG(Rating) FROM movie_data  where Votes > 10000 GROUP BY `Year` HAVING AVG(Rating)>7;`
+    * ![image](https://user-images.githubusercontent.com/73262817/113723324-d2219d80-9723-11eb-9246-f307ef4b170c.png)
+
+  ```
   * 其他查询法    
     `SUM` 计算列合计值，该列必须为数值类型  
     `AVG` 计算列平均值，同样要求数值类型   
