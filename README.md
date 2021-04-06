@@ -96,15 +96,18 @@
 
 ## 数据查询语言SELECT ##
 
-以下图的hero_1表格为例
+以下图的movie_data表格为例
 
-![image](https://user-images.githubusercontent.com/73262817/111873673-683b9100-89cc-11eb-94d4-bd11b3a5c602.png)
+![image](https://user-images.githubusercontent.com/73262817/113714526-13617f80-971b-11eb-8311-562cef0b6f5b.png)
+
 
 * 全部查询  
 `SELECT * FROM 表名;`
-  * `SELECT * FROM hero_1;`  
+  * `SELECT * FROM movie_data;`  
 
-    ![image](https://user-images.githubusercontent.com/73262817/111873677-6bcf1800-89cc-11eb-9434-104d0f8dc2ee.png)
+ ![image](https://user-images.githubusercontent.com/73262817/113714572-1c525100-971b-11eb-8b07-edb1678e35d8.png)
+
+
 
 
 * 条件查询  
@@ -112,34 +115,35 @@
 用来查找列1值大于等于n且列2值小于等于m的记录  
 注意where要直接接在from后面  
 逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
-  * `SELECT * FROM hero_1 WHERe profession = '法师';`  
+  * `SELECT * FROM movie_data WHERe Director = 'Christopher Nolan';`  
  
-    ![image](https://user-images.githubusercontent.com/73262817/111873723-b6e92b00-89cc-11eb-8d57-b233c4e868d5.png)
+  ![image](https://user-images.githubusercontent.com/73262817/113714915-7f43e800-971b-11eb-8019-924e8d9d5a3b.png)
 
-* 去除值重复
+
+* 去除值重复  
   ` SELECT DISTINCT 列名 FROM 表名;`
   
-  * ` SELECT DISTINCT profession from hero_1;`  
-  查询数据库中所有存在的职业
+  * `SELECT DISTINCT Director from movie_data;`  
+  查询数据库中所有存在的导演  
   
-  ![image](https://user-images.githubusercontent.com/73262817/111998116-ab297000-8b56-11eb-927b-7a5f422f9b91.png)
+  ![image](https://user-images.githubusercontent.com/73262817/113715137-bc0fdf00-971b-11eb-9f25-21804e2a3b46.png)
 
 
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
-  * `SELECT hero_id id_hero, hero_name name_hero FROM hero_1;;`   
+  * `SELECT Director '导演', Actors '演员' FROM movie_data;`   
 
-    ![image](https://user-images.githubusercontent.com/73262817/111873785-10e9f080-89cd-11eb-84ae-a2f0823ed036.png)
+    ![image](https://user-images.githubusercontent.com/73262817/113715537-2fb1ec00-971c-11eb-841a-c4bad88b566b.png)
 
 
 * 排序  
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
 加上DESC表示倒序
-  * `select * from hero_1 order by ban_rate desc;`  
+  * `select * from movie_data order by Rating desc;`  
  
-    ![image](https://user-images.githubusercontent.com/73262817/111873841-48f13380-89cd-11eb-92d6-f468d9133e42.png)
+    ![image](https://user-images.githubusercontent.com/73262817/113715702-65ef6b80-971c-11eb-949e-bddb5580f29c.png)
 
 
 * 聚合查询  
