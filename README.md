@@ -199,6 +199,9 @@ ORDER BY <排序列清单>;
   * RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数
   
 （加个例子）
+PARTITION BY 能够设定排序的对象范围。  
+
+ORDER BY 能够指定按照哪一列、何种顺序进行排序。  
 
 ## python与SQL 
 ### PyMySQL 
