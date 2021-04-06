@@ -92,23 +92,16 @@
   * `delete from hero_1 where hero_name = '露娜';  
  
  ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
-
-
 ## 数据查询语言SELECT ##
 
 以下图的movie_data表格为例
 
 ![image](https://user-images.githubusercontent.com/73262817/113719991-c84a6b00-9720-11eb-8f9c-17449ae66fce.png)
-
-
 * 全部查询  
 `SELECT * FROM 表名;`
   * `SELECT * FROM movie_data;`  
 
  ![image](https://user-images.githubusercontent.com/73262817/113720011-cc768880-9720-11eb-974c-35b00db7e98c.png)
-
-
-
 * 条件查询  
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
 用来查找列1值大于等于n且列2值小于等于m的记录  
@@ -117,8 +110,6 @@
   * `SELECT * FROM movie_data WHERe Director = 'Christopher Nolan';`  
  
   ![image](https://user-images.githubusercontent.com/73262817/113714915-7f43e800-971b-11eb-8019-924e8d9d5a3b.png)
-
-
 * 去除值重复  
   ` SELECT DISTINCT 列名 FROM 表名;`
   
@@ -126,16 +117,12 @@
   查询数据库中所有存在的导演  
   
   ![image](https://user-images.githubusercontent.com/73262817/113715137-bc0fdf00-971b-11eb-9f25-21804e2a3b46.png)
-
-
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
   * `SELECT Director '导演', Actors '演员' FROM movie_data;`   
 
     ![image](https://user-images.githubusercontent.com/73262817/113715537-2fb1ec00-971c-11eb-841a-c4bad88b566b.png)
-
-
 * 排序  
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
@@ -143,8 +130,6 @@
   * `select * from movie_data ORDER BY Rating desc;`  
  
    ![image](https://user-images.githubusercontent.com/73262817/113720338-1cede600-9721-11eb-9a66-a3aec0cf71b9.png)
-
-
 * 聚合查询  
 `SELECT COUNT(*) FROM 表名；`  
 查询表的全部行数  
@@ -165,7 +150,7 @@
    查询每年投票数大于10000的全部电影的平均分数   
   
   ![image](https://user-images.githubusercontent.com/73262817/113722273-d7cab380-9722-11eb-93c2-9ea9b83e17a2.png)
-  *  having  
+  * HAVING  
   由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
   语法  
   ```
