@@ -165,7 +165,6 @@
    查询每年投票数大于10000的全部电影的平均分数   
   
   ![image](https://user-images.githubusercontent.com/73262817/113722273-d7cab380-9722-11eb-93c2-9ea9b83e17a2.png)
-
   *  having  
   由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
   语法  
