@@ -98,15 +98,14 @@
 
 以下图的movie_data表格为例
 
-![image](https://user-images.githubusercontent.com/73262817/113714526-13617f80-971b-11eb-8311-562cef0b6f5b.png)
+![image](https://user-images.githubusercontent.com/73262817/113719991-c84a6b00-9720-11eb-8f9c-17449ae66fce.png)
 
 
 * 全部查询  
 `SELECT * FROM 表名;`
   * `SELECT * FROM movie_data;`  
 
- ![image](https://user-images.githubusercontent.com/73262817/113714572-1c525100-971b-11eb-8b07-edb1678e35d8.png)
-
+ ![image](https://user-images.githubusercontent.com/73262817/113720011-cc768880-9720-11eb-974c-35b00db7e98c.png)
 
 
 
