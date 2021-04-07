@@ -181,22 +181,24 @@ mysql的通配符有两种
    
 ## SQL实用语句 ##
 * 插入或替换  
-`REPLACE INTO students (字段1，字段2...) VALUES (值1，值2,...);`  
+`REPLACE INTO 表名 (列名1，列名2...) VALUES (值1，值2,...);`  
 如果原记录存在，就会删除原记录替换为新记录
+
 * 插入或更新  
-`INSERT INTO students (字段1，字段2...) VALUES (值1，值2,...) ON DULICATE KEY UPDATE 字段名1 = 值1，字段名2 = 值2...;`  
+`INSERT INTO 表名 (列名1，列名2...) VALUES (值1，值2,...) ON DULICATE KEY UPDATE 列名1 = 值1，列名2 = 值2...;`  
 若记录不存在，则插入新记录，否则，字段1为值1的记录会被update之后的内容更新  
 
 * 插入或忽略  
 `INSERT IGNORE INTO students (字段1，字段2...) VALUES (值1，值2,...);`  
 若记录存在，则忽略，什么也不会发生
+
 * 快照  
 `CREATE TABLE 新表名 SELECT * FROM 原表名 WHERE 字段1 = 1;`   
 用于复制当前表的部分或全部数据到新表
 
 * 强制使用锁定指引  
 `SELECT * FROM 表名 FORCE INDEX （字段名）;`  
-强制系统使用（字段名）进行索引，前提是索引必须存在
+强制系统使用（列名）进行索引，前提是索引必须存在
 
 
 ## SQL高级处理 
@@ -208,13 +210,22 @@ mysql的通配符有两种
 ORDER BY <排序列清单>;
 ```
 * 用法  
-  * 作为窗口函数用的聚合函数（SUM,AVG,COUNT,MAX,MIN）
-  * RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数
-  
-（加个例子）
-PARTITION BY 能够设定排序的对象范围。  
+  1.作为窗口函数用的聚合函数（SUM,AVG,COUNT,MAX,MIN）  
+  2. RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数   
+  * 一个rank函数的例子
+  先以电影类别分类，再以rating高低排序
+ ```
+ select Title,Genre,Director,Actors,Year,`Runtime (Minutes)`,Rating, RANK() 
+		OVER (partition by Genre order by Rating)as rating 
+		from movie_data;` 
+ ```
+PARTITION BY 能够设定排序的对象范围，横向划分表格。  
 
-ORDER BY 能够指定按照哪一列、何种顺序进行排序。  
+ORDER BY 能够指定按照哪一列、何种顺序进行排序，纵向决定表的排序。  
+
+![image](https://user-images.githubusercontent.com/73262817/113894848-fa300000-97fa-11eb-97c5-685d58893a6f.png)
+
+
 
 ## python与SQL 
 ### PyMySQL 
