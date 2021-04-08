@@ -1,6 +1,6 @@
 # SQL
 
-![image](https://user-images.githubusercontent.com/73262817/111874398-0da43400-89d0-11eb-8382-8d95b8453b8c.png)
+![Uploading image.png…]()
 
 结构化查询语言(Structured Query language)，是一种用与数据库查询、存储、更新、管理的编程语言。
 
@@ -17,7 +17,9 @@
    ![1](https://user-images.githubusercontent.com/73262817/111869273-8946b680-89b9-11eb-960d-bb23bf6188d5.PNG)
  
  * 创建列表  
-  `CREATE TABLE 列表名(字段1，字段2...);`  
+ 
+ `CREATE TABLE 列表名(字段1，字段2...);`  
+   
    * `CREATE TABLE hero_1( 
      hero_id INT,
      hero_name VARCHAR(20),
@@ -41,6 +43,7 @@
 ### 修改列表结构 ###
 * 添加列名  
  `ALTER TABLE 表名 ADD 列名 类型;`  
+  
   * `alter table hero_1 add position VARCHAR(20);`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111870597-9dda7d00-89c0-11eb-9741-e47dbb1f8ad6.png)
@@ -50,6 +53,7 @@
 
 * 删除列  
 `ALTER TABLE 表名 DROP 列名;`  
+  
   * `alter table hero_1 drop position;`  
 
 ![image](https://user-images.githubusercontent.com/73262817/111870907-463d1100-89c2-11eb-8fdb-a1ad0c7f2fa5.png)
@@ -61,6 +65,7 @@
 ## 数据操作语言 ##
 * 插入段名  
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
+   
    * 输入数据 
    ```
    insert into hero_1(hero_id,hero_name,profession) VALUES
@@ -80,15 +85,18 @@
 
 * 更新数据  
  `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`   
+  
   * `update hero_1 SET profession = '法师' where hero_name = '露娜';`
  
  ![image](https://user-images.githubusercontent.com/73262817/111872942-ed24ab80-89c8-11eb-8899-a496009edf56.png)
+  
   * tips  
   1.利用where语句可以同时更新多条记录  
   2.SET之后的赋值语句可以在原来的基础上改动    
 
 * 删除数据  
 `DELETE FROM 表名 WHERE 字段 = 值;`  
+  
   * `delete from hero_1 where hero_name = '露娜';  
  
  ![image](https://user-images.githubusercontent.com/73262817/111873124-bf8c3200-89c9-11eb-8ea5-d440ec0fafce.png)
@@ -99,18 +107,22 @@
 ![image](https://user-images.githubusercontent.com/73262817/113719991-c84a6b00-9720-11eb-8f9c-17449ae66fce.png)
 * 全部查询  
 `SELECT * FROM 表名;`
+  
   * `SELECT * FROM movie_data;`  
 
  ![image](https://user-images.githubusercontent.com/73262817/113720011-cc768880-9720-11eb-974c-35b00db7e98c.png)
 * 条件查询  
+
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
 用来查找列1值大于等于n且列2值小于等于m的记录  
 注意where要直接接在from后面  
 逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
+  
   * `SELECT * FROM movie_data WHERe Director = 'Christopher Nolan';`  
  
   ![image](https://user-images.githubusercontent.com/73262817/113714915-7f43e800-971b-11eb-8019-924e8d9d5a3b.png)
 * 去除值重复  
+  
   ` SELECT DISTINCT 列名 FROM 表名;`
   
   * `SELECT DISTINCT Director from movie_data;`  
@@ -120,6 +132,7 @@
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
+  
   * `SELECT Director '导演', Actors '演员' FROM movie_data;`   
 
     ![image](https://user-images.githubusercontent.com/73262817/113715537-2fb1ec00-971c-11eb-841a-c4bad88b566b.png)
@@ -127,18 +140,21 @@
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
 加上DESC表示倒序
+  
   * `select * from movie_data ORDER BY Rating desc;`  
  
    ![image](https://user-images.githubusercontent.com/73262817/113720338-1cede600-9721-11eb-9a66-a3aec0cf71b9.png)
 * 聚合查询  
+
 `SELECT COUNT(*) FROM 表名；`  
 查询表的全部行数  
+
 `SELECT COUNT(列名1) 别名 FROM 表名 WHERE 列名1 >= n ;`  
 带条件的聚合查询，同时命名新的列名为别名  
+  
   * `select count(*) total from movie_data where Rating > 8;`  
  
  ![image](https://user-images.githubusercontent.com/73262817/113720555-5cb4cd80-9721-11eb-87e4-379a5405d707.png)
-
 
   * group by  
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
@@ -234,7 +250,7 @@ ORDER BY 能够指定按照哪一列、何种顺序进行排序，纵向决定�
 
 ![image](https://user-images.githubusercontent.com/73262817/113894848-fa300000-97fa-11eb-97c5-685d58893a6f.png)
 
-    * 一个sum函数作为窗口函数使用的例子  
+   * 一个sum函数作为窗口函数使用的例子  
 ```
 select `Rank`,Title,Votes,
 	SUM(Votes) OVER (order by `Rank`) as total_votes
