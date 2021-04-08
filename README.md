@@ -157,7 +157,7 @@
   ![image](https://user-images.githubusercontent.com/73262817/113715137-bc0fdf00-971b-11eb-9f25-21804e2a3b46.png)
 
 * 投影查询  
-`SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
+`SELECT 列名1 别名1，列名2，列名3 FROME 表名；`  
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
   
   * `SELECT Director '导演', Actors '演员' FROM movie_data;`   
