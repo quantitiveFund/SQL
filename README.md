@@ -237,8 +237,9 @@ ORDER BY <排序列清单>;
   * ROW_NUMBer  
  赋予唯一的连续位次   
  例如在3条记录并列时：1位，2位，3位，4位   
+    
     * 一个rank函数的例子
-  先以电影类别分类，再以rating高低排序
+      先以电影类别分类，再以rating高低排序
  ```
  select Title,Genre,Director,Actors,Year,`Runtime (Minutes)`,Rating, RANK() 
 		OVER (partition by Genre order by Rating)as rating 
@@ -256,12 +257,8 @@ select `Rank`,Title,Votes,
 	SUM(Votes) OVER (order by `Rank`) as total_votes
 	from movie_data;
 ```
+
 ![image](https://user-images.githubusercontent.com/73262817/113991674-44f65a00-9885-11eb-9655-cc5d33cc273d.png)
-
-  
- 
-
-
 
 ## python与SQL 
 ### PyMySQL 
