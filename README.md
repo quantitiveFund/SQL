@@ -5,6 +5,12 @@
 
 结构化查询语言(Structured Query language)，是一种用与数据库查询、存储、更新、管理的编程语言。
 
+## 数据库本质
+
+按照特定格式储存数据的文件系统
+
+![image](https://user-images.githubusercontent.com/73262817/114022733-aaa60e80-98a4-11eb-82c9-6f7ce4f61309.png)
+
 ## 运行MySQL ##
 
 验证MySQL是否安装正确，可以通过在命令提示符（在主界面运行cmd）中输入`mysql -u root -p`，正确安装下会链接到MySQL服务器，同时提示`mysql>`
