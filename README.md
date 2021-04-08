@@ -203,7 +203,7 @@ mysql的通配符有两种
 
 ## SQL高级处理 
 ### 窗口函数
-也称为OLAP函数（Online analytical processing），可以对数据库进行实时处理。  
+也称为OLAP函数（Online analytical processing），可以对数据库进行实时处理。 
 * 语法   
 ```
 <窗口函数> OVER ([partition by <列清单>])
@@ -211,8 +211,17 @@ ORDER BY <排序列清单>;
 ```
 * 用法  
   1.作为窗口函数用的聚合函数（SUM,AVG,COUNT,MAX,MIN）  
-  2. RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数   
-  * 一个rank函数的例子
+  2. RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数  
+  * Rank 函数  
+在有相同位次的记录，会跳过后面的位次    
+例如：1位，1位，1位，4位  
+  * DENSE_RANK 函数  
+ 在有相同位次的记录，不会跳过后面的位次  
+ 例如：1位，1位，1位，2位  
+  * ROW_NUMBer  
+ 赋予唯一的连续位次   
+ 例如在3条记录并列时：1位，2位，3位，4位   
+    * 一个rank函数的例子
   先以电影类别分类，再以rating高低排序
  ```
  select Title,Genre,Director,Actors,Year,`Runtime (Minutes)`,Rating, RANK() 
@@ -225,16 +234,17 @@ ORDER BY 能够指定按照哪一列、何种顺序进行排序，纵向决定�
 
 ![image](https://user-images.githubusercontent.com/73262817/113894848-fa300000-97fa-11eb-97c5-685d58893a6f.png)
 
-  * _Rank 函数_  
-在有相同位次的记录，会跳过后面的位次    
-例如：1位，1位，1位，4位  
-  * DENSE_RANK 函数  
- 在有相同位次的记录，不会跳过后面的位次  
- 例如：1位，1位，1位，2位  
-  * ROW_NUMBer  
- 赋予唯一的连续位次   
- 例如在3条记录并列时：1位，2位，3位，4位  
- 	
+    * 一个sum函数作为窗口函数使用的例子  
+```
+select `Rank`,Title,Votes,
+	SUM(Votes) OVER (order by `Rank`) as total_votes
+	from movie_data;
+```
+![image](https://user-images.githubusercontent.com/73262817/113991674-44f65a00-9885-11eb-9655-cc5d33cc273d.png)
+
+  
+ 
+
 
 
 ## python与SQL 
