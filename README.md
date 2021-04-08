@@ -1,6 +1,6 @@
 # SQL
 
-![Uploading image.png…]()
+
 
 结构化查询语言(Structured Query language)，是一种用与数据库查询、存储、更新、管理的编程语言。
 
