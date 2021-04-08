@@ -1,5 +1,6 @@
 # SQL
 
+![image](https://user-images.githubusercontent.com/73262817/113993950-88ea5e80-9887-11eb-8361-fe91d368454f.png)
 
 
 结构化查询语言(Structured Query language)，是一种用与数据库查询、存储、更新、管理的编程语言。
