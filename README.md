@@ -11,9 +11,11 @@
 
 ## 定义数据对象语句 ##
 ### 数据库和列表的创建 ###
-* **创建数据库**  
+* 创建数据库  
+
 `CREATE DATABASE 数据库名;`
-  *  `CREATE DATABSE 王者荣耀;`  
+ 
+ *  `CREATE DATABSE 王者荣耀;`  
    
    ![1](https://user-images.githubusercontent.com/73262817/111869273-8946b680-89b9-11eb-960d-bb23bf6188d5.PNG)
  
@@ -35,14 +37,18 @@
 
 ### 数据库和列表的删除 ###
  * 删除表  
+  
   `DROP TABLE IF EXISXS 表名;`  
+  
   如果表名存在就删除，也可以不加if exist  
   
  * 删除数据库  
+  
   `DROP DATABASE 库名;`  
   
 ### 修改列表结构 ###
 * 添加列名  
+ 
  `ALTER TABLE 表名 ADD 列名 类型;`  
   
   * `alter table hero_1 add position VARCHAR(20);`  
@@ -50,9 +56,11 @@
 ![image](https://user-images.githubusercontent.com/73262817/111870597-9dda7d00-89c0-11eb-9741-e47dbb1f8ad6.png)
 
 * 修改列类型    
+
 `ALTERT TABLE 表名 MODIFY 列名 类型;`  
 
 * 删除列  
+
 `ALTER TABLE 表名 DROP 列名;`  
   
   * `alter table hero_1 drop position;`  
@@ -60,11 +68,13 @@
 ![image](https://user-images.githubusercontent.com/73262817/111870907-463d1100-89c2-11eb-8fdb-a1ad0c7f2fa5.png)
 
 * 修改表名   
+
 `REANME TABLE 表名 TO 新表名;`  
 
 
 ## 数据操作语言 ##
 * 插入段名  
+
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
    
    * 输入数据 
@@ -85,6 +95,7 @@
     ![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
 
 * 更新数据  
+ 
  `UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;`   
   
   * `update hero_1 SET profession = '法师' where hero_name = '露娜';`
@@ -92,10 +103,12 @@
  ![image](https://user-images.githubusercontent.com/73262817/111872942-ed24ab80-89c8-11eb-8899-a496009edf56.png)
   
   * tips  
+  
   1.利用where语句可以同时更新多条记录  
   2.SET之后的赋值语句可以在原来的基础上改动    
 
 * 删除数据  
+
 `DELETE FROM 表名 WHERE 字段 = 值;`  
   
   * `delete from hero_1 where hero_name = '露娜';  
@@ -106,15 +119,19 @@
 以下图的movie_data表格为例
 
 ![image](https://user-images.githubusercontent.com/73262817/113719991-c84a6b00-9720-11eb-8f9c-17449ae66fce.png)
+
 * 全部查询  
+
 `SELECT * FROM 表名;`
   
   * `SELECT * FROM movie_data;`  
 
  ![image](https://user-images.githubusercontent.com/73262817/113720011-cc768880-9720-11eb-974c-35b00db7e98c.png)
+
 * 条件查询  
 
 `SELECT * FROM 表名 WHERE 列名1 >= n AND 列名2 <= m;`    
+
 用来查找列1值大于等于n且列2值小于等于m的记录  
 注意where要直接接在from后面  
 逻辑连接词还有`NOT`,`OR`。如果不加括号，优先级为not>and>or  
@@ -122,6 +139,7 @@
   * `SELECT * FROM movie_data WHERe Director = 'Christopher Nolan';`  
  
   ![image](https://user-images.githubusercontent.com/73262817/113714915-7f43e800-971b-11eb-8019-924e8d9d5a3b.png)
+
 * 去除值重复  
   
   ` SELECT DISTINCT 列名 FROM 表名;`
@@ -130,6 +148,7 @@
   查询数据库中所有存在的导演  
   
   ![image](https://user-images.githubusercontent.com/73262817/113715137-bc0fdf00-971b-11eb-9f25-21804e2a3b46.png)
+
 * 投影查询  
 `SELECT 列名1 别名1，列名2，列名3 FROME 表名；`
 返回结果为只包括所选取的三列的二位表结构，其中列名1被别名替代（不用改别名可以空着。查询结果中列的顺序和select中子句中的顺序相同
@@ -137,7 +156,9 @@
   * `SELECT Director '导演', Actors '演员' FROM movie_data;`   
 
     ![image](https://user-images.githubusercontent.com/73262817/113715537-2fb1ec00-971c-11eb-841a-c4bad88b566b.png)
+
 * 排序  
+
 `SELECT 列名1，列名2， 列名3 FROM 表名 ORDER BY 列名1，列名2 (DESC);`  
 将列名123从高到低排序，先比较列名1，相同时比较列2值大小  
 加上DESC表示倒序
@@ -145,6 +166,7 @@
   * `select * from movie_data ORDER BY Rating desc;`  
  
    ![image](https://user-images.githubusercontent.com/73262817/113720338-1cede600-9721-11eb-9a66-a3aec0cf71b9.png)
+
 * 聚合查询  
 
 `SELECT COUNT(*) FROM 表名；`  
@@ -158,6 +180,7 @@
  ![image](https://user-images.githubusercontent.com/73262817/113720555-5cb4cd80-9721-11eb-87e4-379a5405d707.png)
 
   * group by  
+  
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
    group by可以把聚合查询的结果进一步切分  
   
@@ -167,7 +190,9 @@
     ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
        
   * HAVING  
+  
   由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
+  
   语法  
   ```
   SELECT <列名1>,<列名2><列名3>...  
@@ -187,6 +212,7 @@
 * 模糊查询  
 语法  
 `SELECT * FROM <表名> WHERE <字段名> LIKE '通配符字符串';`  
+
 mysql的通配符有两种  
   * %：表示0个或多个字符
   * _:表示一个字符
@@ -226,15 +252,19 @@ mysql的通配符有两种
 <窗口函数> OVER ([partition by <列清单>])
 ORDER BY <排序列清单>;
 ```
+
 * 用法  
   1.作为窗口函数用的聚合函数（SUM,AVG,COUNT,MAX,MIN）  
   2. RANK,DENSE_RANK,ROW_NUMBER 等专用窗口函数  
+  
   * Rank 函数  
 在有相同位次的记录，会跳过后面的位次    
 例如：1位，1位，1位，4位  
+  
   * DENSE_RANK 函数  
  在有相同位次的记录，不会跳过后面的位次  
  例如：1位，1位，1位，2位  
+  
   * ROW_NUMBer  
  赋予唯一的连续位次   
  例如在3条记录并列时：1位，2位，3位，4位   
@@ -253,6 +283,7 @@ ORDER BY 能够指定按照哪一列、何种顺序进行排序，纵向决定�
 ![image](https://user-images.githubusercontent.com/73262817/113894848-fa300000-97fa-11eb-97c5-685d58893a6f.png)
 
    * 一个sum函数作为窗口函数使用的例子  
+
 ```
 select `Rank`,Title,Votes,
 	SUM(Votes) OVER (order by `Rank`) as total_votes
