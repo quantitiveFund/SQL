@@ -84,7 +84,7 @@
 `INSERT INTO 表名 (字段1，字段2，字段3，...) VALUES (值1，值2，值3...);`  
    
    * 输入数据 
-   ```
+```
    insert into hero_1(hero_id,hero_name,profession) VALUES
     (1,'李白','刺客'),   
     (2,'鲁班七号','射手'),
@@ -96,7 +96,8 @@
     (8,'诸葛亮','法师 ),  
     (9,'司马懿','法师'),  
     (10,'澜','刺客');
-    ```
+ 
+ ```
 
     ![image](https://user-images.githubusercontent.com/73262817/111871084-5dc8c980-89c3-11eb-9984-ee92ae2a004c.png)
 
