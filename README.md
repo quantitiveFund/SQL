@@ -191,10 +191,10 @@
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
    group by可以把聚合查询的结果进一步切分  
   
-   * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`
-   * 查询每年投票数大于10000的全部电影的平均分数   
+    * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`  
+    * 查询每年投票数大于10000的全部电影的平均分数   
     
-    ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
+   ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
        
   * HAVING  
   
@@ -206,10 +206,11 @@
     FROM <表名>  
     GROUP BY <列名1>,<列名2><列名3>...   
   HAVING <分组结果对应条件>；  
-    * `SELECT `Year` , AVG(Rating) FROM movie_data  where Votes > 10000 GROUP BY `Year` HAVING AVG(Rating)>7;`
-    * ![image](https://user-images.githubusercontent.com/73262817/113723324-d2219d80-9723-11eb-9246-f307ef4b170c.png)
-
   ```
+    * `SELECT `Year` , AVG(Rating) FROM movie_data  where Votes > 10000 GROUP BY `Year` HAVING AVG(Rating)>7;`
+   ![image](https://user-images.githubusercontent.com/73262817/113723324-d2219d80-9723-11eb-9246-f307ef4b170c.png)
+
+  
   * 其他查询法    
     `SUM` 计算列合计值，该列必须为数值类型  
     `AVG` 计算列平均值，同样要求数值类型   
