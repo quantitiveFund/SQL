@@ -191,8 +191,8 @@
   `SELECT 列名1,列名2,列名3,.. FROM 表名 GROUP BY 列名1,列名2,...`  
    group by可以把聚合查询的结果进一步切分  
   
-    * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`  
-    * 查询每年投票数大于10000的全部电影的平均分数   
+   * `SELECT `Year` , AVG(Rating) FROM movie_data GROUP BY `Year` ;`
+   * 查询每年投票数大于10000的全部电影的平均分数   
     
     ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
        
