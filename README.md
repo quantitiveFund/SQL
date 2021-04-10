@@ -260,7 +260,7 @@ END
 用于复制当前表的部分或全部数据到新表
 
 * 强制使用锁定指引  
-`SELECT * FROM 表名 FORCE INDEX （字段名）;`  
+`SELECT * FROM 表名 FORCE INDEX （字段名）;`   
 强制系统使用（列名）进行索引，前提是索引必须存在
 
 
@@ -294,7 +294,7 @@ ORDER BY <排序列清单>;
  ```
  select Title,Genre,Director,Actors,Year,`Runtime (Minutes)`,Rating, RANK() 
 		OVER (partition by Genre order by Rating)as rating 
-		from movie_data;` 
+		from movie_data;  
  ```
 PARTITION BY 能够设定排序的对象范围，横向划分表格。  
 
@@ -307,7 +307,7 @@ ORDER BY 能够指定按照哪一列、何种顺序进行排序，纵向决定�
 ```
 select `Rank`,Title,Votes,
 	SUM(Votes) OVER (order by `Rank`) as total_votes
-	from movie_data;
+	from movie_data;  
 ```
 
 ![image](https://user-images.githubusercontent.com/73262817/113991674-44f65a00-9885-11eb-9655-cc5d33cc273d.png)
