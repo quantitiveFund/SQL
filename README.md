@@ -298,7 +298,8 @@ select `Rank`,Title,Votes,
 	from movie_data;
 ```
 
-![image](https://user-images.githubusercontent.com/73262817/113991674-44f65a00-9885-11eb-9655-cc5d33cc273d.png)
+![image](https://user-images.githubusercontent.com/73262817/114830950-63b59d00-9dff-11eb-9bf8-2601ecb3fd4a.png)
+
 
 ## python与SQL 
 ### PyMySQL 
