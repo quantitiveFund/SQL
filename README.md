@@ -300,6 +300,9 @@ select `Rank`,Title,Votes,
 
 ![image](https://user-images.githubusercontent.com/73262817/114830950-63b59d00-9dff-11eb-9bf8-2601ecb3fd4a.png)
 
+### GROUPING函数
+包括了三种用法：ROLLUP，CUBE，GROUPING SETS
+
 
 ## python与SQL 
 ### PyMySQL 
