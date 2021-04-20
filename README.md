@@ -196,6 +196,7 @@
     
    ![image](https://user-images.githubusercontent.com/73262817/113723423-ebc2e500-9723-11eb-8f50-cb9abb5d183a.png) 
        
+       
   * HAVING  
   
   由于group by 一般用于 select where from 之后，再需要分类就要用到having函数来判断  
@@ -210,6 +211,22 @@
     * `SELECT `Year` , AVG(Rating) FROM movie_data  where Votes > 10000 GROUP BY `Year` HAVING AVG(Rating)>7;`
    ![image](https://user-images.githubusercontent.com/73262817/113723324-d2219d80-9723-11eb-9246-f307ef4b170c.png)
 
+  * ROLLUP  
+
+ROLLUP是GROUP BY子句的扩展。 ROLLUP选项允许包含表示小计的额外行，通常称为超级聚合行，以及总计行。 
+
+```
+select `Year` , Genre ,sum(Votes) as total_votes
+	from movie_data
+	group by  `Year`,Genre with rollup;
+```
+
+![image](https://user-images.githubusercontent.com/73262817/115114464-26e5d380-9fc2-11eb-96b1-3b294115dead.png)
+![image](https://user-images.githubusercontent.com/73262817/115114478-39f8a380-9fc2-11eb-895e-bcf5499ddb1b.png)
+
+
+查询每年每种电影的总投票，在最后一行会显示键值为NULL的超级聚合行，数值是该年全部总票数的加和，可以理解为小计。最后一行是总计。 
+   
   
   * 其他查询法    
     `SUM` 计算列合计值，该列必须为数值类型  
